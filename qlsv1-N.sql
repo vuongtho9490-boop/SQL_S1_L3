@@ -1,0 +1,18 @@
+CREATE DATABASE QuanLyTruongHoc;
+USE QuanLyTruongHoc;
+CREATE TABLE Lop (
+    MaLop VARCHAR(20) PRIMARY KEY,
+    TenLop VARCHAR(100) NOT NULL,
+    KhoaHoc VARCHAR(20),
+    SiSo INT DEFAULT 0
+);
+
+CREATE TABLE SinhVien (
+    MaSV VARCHAR(20) PRIMARY KEY,
+    HoTen VARCHAR(100) NOT NULL,
+    NgaySinh DATE,
+    GioiTinh VARCHAR(10),
+    DiaChi VARCHAR(255),
+    MaLop VARCHAR(20),
+    FOREIGN KEY (MaLop) REFERENCES Lop(MaLop)
+);
